@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:antiquewhite;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.container{
+    /* max-width: 1200px; */
+    width: 98%;
+    }
+/* 
+    .slider-wrapper{
+        margin-left: 5px;
+        margin-right: 5px;
+    } */
+
+.slider-wrapper .image-slide{
+	display: grid;
+    gap: 15px;
+    scrollbar-width: none;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: flex-start;
+    overflow-x: auto;
+    margin-bottom: 10px;
+}
+.slider-wrapper{
+    position: relative;
+}
+
+.slider-wrapper .slide-button{
+position:absolute;
+top: 50%;
+height: 50px;
+width: 50px;
+color: white ;
+background-color: black;
+font-size: 2.2rem;
+border: none;
+outline: none;
+border-radius: 50%;
+cursor: pointer;
+transform: translateY(-50%);
+}
+
+.slider-wrapper .slide-button:hover{
+background-color: #555;
+}
+
+.slider-wrapper .slide-button#prev-btn{
+    left: -20px;
+}
+.slider-wrapper .slide-button#next-btn{
+    right: -20px;
+}
+
+
+.slider-wrapper .image-slide::-webkit-scrollbar{
+    display: none;
+}
+
+.image-item{
+    /* margin: 5px; */
+	width: 250px;
+	height: 350px;
+	object-fit: cover;
+    border-radius: 10%;
+}
+
+.container .slider-scrollbar{
+    height: 15px;
+    width: 100%;
+    border-radius: 15px;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+}
+
+.slider-scrollbar .scrollbar-track{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+}
+
+.slider-scrollbar .scrollbar-track:hover{
+    height: 6px;
+}
+
+.slider-scrollbar .scrollbar-thumb{
+    position: absolute;
+    height: 100%;
+    width: 18%;
+    background-color: blue;
+    border-radius: inherit;
+    cursor: grab;
+}
+.slider-scrollbar .scrollbar-thumb:active{
+    cursor: grabbing;
+    height: 8px;
+    top: -1;
+}
+
+.slider-scrollbar .scrollbar-thumb::after{
+    content: Iamge;
+    left: 0;
+    right: 0;
+    top: -10px;
+    bottom: -10px;
+    position: absolute;
+}
+
+/**Responsive for mobile and tablet**/
+
+/* @media(max-width:1023px){
+    .slider-wrapper .slide-button{
+        display: none!important;
+    }
+    .slider-wrapper .image-slide{
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+    .image-item{
+        width: 150px;
+        height: 200px;
+    } 
+      
+} */
